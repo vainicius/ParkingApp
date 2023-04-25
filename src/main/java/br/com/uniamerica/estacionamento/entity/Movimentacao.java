@@ -51,10 +51,4 @@ public class Movimentacao extends AbstractEntity {
     @Column(name="valores_horas_multas",nullable = false)
     private BigDecimal valorHoraMulta;
 
-
-
-
-
-
-
 }
