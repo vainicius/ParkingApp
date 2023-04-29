@@ -1,9 +1,11 @@
 package br.com.uniamerica.estacionamento.controller;
 
-import br.com.uniamerica.estacionamento.entity.Marca;
+
 import br.com.uniamerica.estacionamento.entity.Modelo;
+import br.com.uniamerica.estacionamento.entity.Veiculo;
 import br.com.uniamerica.estacionamento.repository.ModeloRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
+import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,7 +21,7 @@ public class ModeloController {
     @Autowired
     private ModeloRepository modeloRepository;
     @Autowired
-    private MovimentacaoRepository movimentacaoRepository;
+    private VeiculoRepository veiculoRepository;
 
 
     @GetMapping
@@ -76,7 +78,7 @@ public class ModeloController {
             if(modeloBanco == null){
                 throw new RuntimeException("Modelo não encontrado!");
             }
-            if(!this.movimentacaoRepository.findByModeloId(id).isEmpty()){
+            if(!this.veiculoRepository.findByModeloId(id).isEmpty()){
                 modeloBanco.setAtivo(false); //Altera par falso
                 this.modeloRepository.save(modeloBanco); //Salva o novo status
                 return ResponseEntity.ok("Modelo desativado com sucesso!");

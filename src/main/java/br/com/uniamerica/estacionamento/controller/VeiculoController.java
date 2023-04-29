@@ -1,6 +1,5 @@
 package br.com.uniamerica.estacionamento.controller;
 
-import br.com.uniamerica.estacionamento.entity.Condutor;
 import br.com.uniamerica.estacionamento.entity.Veiculo;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/api/movimentacao")
+@RequestMapping("/api/veiculo")
 public class VeiculoController {
 
     @Autowired

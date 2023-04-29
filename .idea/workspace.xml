@@ -4,27 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Elements, DB and Controller Settings">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/CondutorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/ConfiguracaoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/MarcaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/MovimentacaoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/VeiculoController.java" afterDir="false" />
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Controllers complete.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/CondutorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/CondutorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/ModeloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/ModeloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/CondutorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/CondutorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/ConfiguracaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/ConfiguracaoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/ModeloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/ModeloRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/Movimentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/MovimentacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/MovimentacaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/VeiculoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/VeiculoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Movimentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Movimentacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Modelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Modelo.class" afterDir="false" />
     </list>
     <list id="bc9b78df-9835-401f-91fa-d541226f40d7" name="Changes by jeanf" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/Movimentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -59,21 +52,16 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java">
       <ranges>
-        <range start1="2" end1="3" start2="2" end2="5" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
-        <range start1="10" end1="14" start2="12" end2="27" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
-        <range start1="16" end1="16" start2="29" end2="31" changelist="bc9b78df-9835-401f-91fa-d541226f40d7" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="bc9b78df-9835-401f-91fa-d541226f40d7" />
-        <range start1="10" end1="14" start2="11" end2="15" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
+        <range start1="17" end1="21" start2="17" end2="17" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
+        <range start1="23" end1="25" start2="19" end2="19" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
+        <range start1="30" end1="30" start2="24" end2="26" changelist="bc9b78df-9835-401f-91fa-d541226f40d7" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java">
       <ranges>
-        <range start1="11" end1="15" start2="11" end2="15" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
-        <range start1="16" end1="17" start2="16" end2="16" changelist="bc9b78df-9835-401f-91fa-d541226f40d7" />
+        <range start1="13" end1="14" start2="13" end2="14" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
+        <range start1="15" end1="15" start2="15" end2="17" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
+        <range start1="16" end1="17" start2="18" end2="18" changelist="bc9b78df-9835-401f-91fa-d541226f40d7" />
       </ranges>
     </file>
   </component>
@@ -101,7 +89,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "C:/Users/usuario/Documents/Desenvolvimento/estacionamento",
+    "last_opened_file_path": "C:/Users/usuario/Desktop/estacionamento-main",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -131,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682466366551</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Controllers complete.">
+      <created>1682739642719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682739642720</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Elements creation and initial DB configuration." />
     <MESSAGE value="Elements, DB and Controller Settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Elements, DB and Controller Settings" />
+    <MESSAGE value="Controllers complete." />
+    <option name="LAST_COMMIT_MESSAGE" value="Controllers complete." />
   </component>
 </project>

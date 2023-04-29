@@ -1,8 +1,8 @@
 package br.com.uniamerica.estacionamento.controller;
 
-import br.com.uniamerica.estacionamento.entity.Condutor;
-import br.com.uniamerica.estacionamento.entity.Marca;
+
 import br.com.uniamerica.estacionamento.entity.Movimentacao;
+import br.com.uniamerica.estacionamento.repository.CondutorRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 public class MovimentacaoController {
     @Autowired
     private MovimentacaoRepository movimentacaoRepository;
+    @Autowired
+    private CondutorRepository condutorRepository;
 
     @GetMapping
     public ResponseEntity<?> findById(@RequestParam("id") final Long id) {
@@ -30,7 +32,7 @@ public class MovimentacaoController {
 
     @GetMapping("/lista/abertas")
     public ResponseEntity<?> findAllAtivos() {
-        return ResponseEntity.ok(this.movimentacaoRepository.findByAbertas());
+        return ResponseEntity.ok(this.condutorRepository.findByAtivo());
     }
 
     @PostMapping
@@ -63,7 +65,7 @@ public class MovimentacaoController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> desativarMarca(
+    public ResponseEntity<?> apagarMovimentacao(
             @RequestParam("id") final Long id
     ) {
         try {
@@ -71,7 +73,7 @@ public class MovimentacaoController {
             if (movimentacaoBanco == null) {
                 throw new RuntimeException("Movimentação não encontrada");
             }
-            if (!this.movimentacaoRepository.findByMovimentacaoId(id).isEmpty()) {
+            if (!this.movimentacaoRepository.findById(id).isEmpty()) {
                 movimentacaoBanco.setAtivo(false); //Altera par falso
                 this.movimentacaoRepository.save(movimentacaoBanco);
                 return ResponseEntity.ok("Alterado");

@@ -11,6 +11,8 @@ import java.util.List;
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
 //    @Query("from Veiculos where placa = :placa")
 //    public List<Veiculo> findByPlaca(@Param("placa") final String placa);
-@Query("from Veiculos where ativo = true")
+@Query("from Veiculo where ativo = true")
 public List<Veiculo>findByAtivos();
+    @Query("from Veiculo where modelo.id = :id")
+    public List<Veiculo> findByModeloId(@Param("id") final Long id);
 }

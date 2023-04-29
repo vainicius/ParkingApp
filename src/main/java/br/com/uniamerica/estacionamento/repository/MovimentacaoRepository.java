@@ -15,14 +15,8 @@ public interface MovimentacaoRepository extends JpaRepository<br.com.uniamerica.
 //    public List<MovimentacaoRepository> findByLike(@Param("entrada")final LocalDateTime entrada);
     @Query("from Movimentacao where condutor.id = :id")
     public List<Movimentacao> findByCondutorId(@Param("id") final Long id);
-    @Query("from Movimentacao where modelo.id = :id")
-    public List<Movimentacao> findByModeloId(@Param("id") final Long id);
-    @Query("from Movimentacao where saidas = null")
-    public List<Movimentacao> findByAbertas();
     @Query("from Movimentacao where ativo = true")
     public List<Movimentacao> findByAtivos();
-    @Query("from Movimentacao where movimentacao.id = :id")
-    public List<Movimentacao> findByMovimentacaoId(@Param("id") final Long id);
     @Query("from Movimentacao where veiculo.id = :id")
     public List<Movimentacao> findByVeiculoId(@Param("id") final Long id);
 

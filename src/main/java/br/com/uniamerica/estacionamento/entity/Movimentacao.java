@@ -9,8 +9,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-@Table(name="movimentacao_table")
 @Entity
+@Table(name="movimentacao_table", schema = "public")
 public class Movimentacao extends AbstractEntity {
     @Getter @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
