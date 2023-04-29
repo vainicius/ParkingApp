@@ -9,8 +9,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
-    @Query("from Veiculos where nome Like :placa")
-    public List<Veiculo> findByLike(@Param("placa")final String placa);
-
-
+//    @Query("from Veiculos where placa = :placa")
+//    public List<Veiculo> findByPlaca(@Param("placa") final String placa);
+@Query("from Veiculos where ativo = true")
+public List<Veiculo>findByAtivos();
 }

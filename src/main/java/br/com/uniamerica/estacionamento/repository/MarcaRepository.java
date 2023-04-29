@@ -8,8 +8,8 @@ import br.com.uniamerica.estacionamento.entity.Marca;
 import java.util.List;
 
 public interface MarcaRepository extends JpaRepository<Marca, Long>  {
-
-    @Query("from Marca where nome Like :nome")
-    public List<Marca> findByLike(@Param("nome")final String nome);
-
+//    @Query("from Marca where nomeMarca like :nomeMarca")
+//    public List<Marca> findByLike(@Param("nomeMarca")final String nomeMarca);
+    @Query("from Marca where ativo = true")
+    public List<Marca> findByAtivo();
 }

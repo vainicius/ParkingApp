@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface ConfiguracaoRepository extends JpaRepository<Configuracao, Long> {
-    @Query("from Configuracao where nome Like :valorHora")
-    public List<Configuracao> findByLike(@Param("valorHora")final BigDecimal valorHora);
+//    @Query("from Configuracao where valorHora = :valorHora")
+//    public List<Configuracao> findByLike(@Param("valorHora")final BigDecimal valorHora);
 
 }

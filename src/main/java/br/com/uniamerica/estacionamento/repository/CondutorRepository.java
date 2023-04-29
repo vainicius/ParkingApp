@@ -11,7 +11,8 @@ import java.util.List;
 
 public interface CondutorRepository extends JpaRepository<Condutor, Long>
 {
-    @Query("from Condutor where nome Like :nomeCondutor")
-    public List<Condutor> findByLike(@Param("nomeCondutor")final String nomeCondutor);
-
+//    @Query("from Condutor where nomeCondutor like :nomeCondutor")
+//    public List<Condutor> findByLike(@Param("nomeCondutor")final String nomeCondutor);
+    @Query("from Condutor where ativo = true")
+    public List<Condutor> findByAtivo();
 }
