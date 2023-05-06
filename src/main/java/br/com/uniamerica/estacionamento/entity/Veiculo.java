@@ -5,8 +5,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-@Table(name="veiculo_table",schema = "public")
 @Entity
+@Table(name="veiculo_table",schema = "public")
 public class Veiculo extends AbstractEntity {
     @Getter @Setter
     @Column(name="placa", nullable = false, length = 15)
