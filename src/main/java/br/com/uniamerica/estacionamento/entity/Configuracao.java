@@ -17,16 +17,16 @@ import java.time.LocalTime;
 
 public class Configuracao extends AbstractEntity {
     @Getter @Setter
-    @Column(name="valor_hora")
+    @Column(name="valor_hora", nullable = false)
     private BigDecimal valorHora;
     @Getter @Setter
     @Column(name="valor_minuto_multa")
     private BigDecimal valorMinutoMulta;
     @Getter @Setter
-    @Column(name="inicio_expediente")
+    @Column(name="inicio_expediente", nullable = false)
     private LocalTime inicioExpediente;
     @Getter @Setter
-    @Column(name="fim_expediente")
+    @Column(name="fim_expediente", nullable = false)
     private LocalTime fimExpediente;
     @Getter @Setter
     @Column(name="tempo_para_desconto")
