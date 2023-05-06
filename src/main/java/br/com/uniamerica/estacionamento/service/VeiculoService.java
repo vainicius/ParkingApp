@@ -1,11 +1,13 @@
 package br.com.uniamerica.estacionamento.service;
 
 import br.com.uniamerica.estacionamento.entity.Modelo;
+import br.com.uniamerica.estacionamento.entity.Movimentacao;
 import br.com.uniamerica.estacionamento.entity.Veiculo;
 import br.com.uniamerica.estacionamento.repository.ModeloRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -38,6 +40,20 @@ public class VeiculoService {
 
         return this.veiculoRepository.save(veiculo);
     }
+    @Transactional
+    public ResponseEntity<?> desativarVeiculo(Long id){
 
+        final Veiculo veiculoBanco = this.veiculoRepository.findById(id).orElse(null);
+        Assert.notNull(veiculoBanco, "Modelo não localizado!");
+
+        if(!this.movimentacaoRepository.findByVeiculoId(id).isEmpty()){
+            veiculoBanco.setAtivo(false); //desativando o Veículo se ele possuir relação com Movimentação
+            this.veiculoRepository.save(veiculoBanco);
+            return ResponseEntity.ok("Veículo desativado.");
+        }else{
+            this.veiculoRepository.delete(veiculoBanco);
+            return ResponseEntity.ok("Veículo deletado.");
+        }
+    }
 
 }
