@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Repositories and Controllers fixed and tested.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/CondutorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/ConfiguracaoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MarcaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/ModeloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MovimentacaoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/VeiculoService.java" afterDir="false" />
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="ModeloService - cadastrar e editar OK">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Movimentacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Movimentacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/ModeloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/ModeloService.java" afterDir="false" />
     </list>
     <list id="bc9b78df-9835-401f-91fa-d541226f40d7" name="Changes by jeanf" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" afterDir="false" />
@@ -117,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682789513374</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ModeloService - cadastrar e editar OK">
+      <created>1683406938809</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683406938810</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +147,7 @@
     <MESSAGE value="Elements, DB and Controller Settings" />
     <MESSAGE value="Controllers complete." />
     <MESSAGE value="Repositories and Controllers fixed and tested." />
-    <option name="LAST_COMMIT_MESSAGE" value="Repositories and Controllers fixed and tested." />
+    <MESSAGE value="ModeloService - cadastrar e editar OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="ModeloService - cadastrar e editar OK" />
   </component>
 </project>
