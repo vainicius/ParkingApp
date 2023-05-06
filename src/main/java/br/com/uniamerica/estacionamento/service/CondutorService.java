@@ -2,7 +2,9 @@ package br.com.uniamerica.estacionamento.service;
 
 import br.com.uniamerica.estacionamento.entity.Condutor;
 import br.com.uniamerica.estacionamento.repository.CondutorRepository;
+import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -14,6 +16,8 @@ import java.util.Optional;
 public class CondutorService {
     @Autowired
     CondutorRepository condutorRepository;
+    @Autowired
+    MovimentacaoRepository movimentacaoRepository;
 
     @Transactional
     public Condutor cadastrar(final Condutor condutor){
@@ -42,6 +46,18 @@ public class CondutorService {
         return this.condutorRepository.save(condutor);
     }
 
+    @Transactional
+    public ResponseEntity<?>desativarCondutor(long id){
+        final Condutor condutorBanco = this.condutorRepository.findById(id).orElse(null);
+        Assert.notNull(condutorBanco, "Condutor não localizado!");
 
-
+        if(!this.movimentacaoRepository.findByVeiculoId(id).isEmpty()){
+            condutorBanco.setAtivo(false); //Desativando o condutor caso ele esteja vinculado a uma movimentação
+            this.condutorRepository.save(condutorBanco);
+            return ResponseEntity.ok("Condutor desativado.");
+        }else{
+            this.condutorRepository.delete(condutorBanco);
+            return ResponseEntity.ok("Condutor deletado.");
+        }
+    }
 }

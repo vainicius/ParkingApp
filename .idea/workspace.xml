@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="CondutorService - cadastrar">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="CondutorService - editar OK">
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/CondutorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/CondutorService.java" afterDir="false" />
     </list>
     <list id="bc9b78df-9835-401f-91fa-d541226f40d7" name="Changes by jeanf" comment="">
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683408764648</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="CondutorService - editar OK">
+      <created>1683409537433</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683409537433</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +170,7 @@
     <MESSAGE value="ModeloService - cadastrar e editar OK" />
     <MESSAGE value="ModeloService - desativar OK" />
     <MESSAGE value="CondutorService - cadastrar" />
-    <option name="LAST_COMMIT_MESSAGE" value="CondutorService - cadastrar" />
+    <MESSAGE value="CondutorService - editar OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="CondutorService - editar OK" />
   </component>
 </project>
