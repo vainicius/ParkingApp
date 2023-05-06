@@ -7,7 +7,9 @@ import br.com.uniamerica.estacionamento.repository.CondutorRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 @Service
@@ -49,6 +51,15 @@ public class MovimentacaoService {
 
         return this.movimentacaoRepository.save(movimentacao);
 
+    }
+    @Transactional
+    public ResponseEntity<?> desativar(Long id){
+
+        final Movimentacao movimentacao = this.movimentacaoRepository.findById(id).orElse(null);
+        Assert.notNull(movimentacao, "Movimentação não localizada!");
+
+        movimentacao.setAtivo(false);
+        return ResponseEntity.ok("Movimentação deletada.");
     }
 
 }
