@@ -15,4 +15,6 @@ public interface CondutorRepository extends JpaRepository<Condutor, Long>
 //    public List<Condutor> findByLike(@Param("nomeCondutor")final String nomeCondutor);
     @Query("from Condutor where ativo = true")
     public List<Condutor> findByAtivo();
+    @Query("from Condutor where cpf = :cpf")
+    public List<Condutor> findByCpf(@Param("cpf") final String cpf);
 }
