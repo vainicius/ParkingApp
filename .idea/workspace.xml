@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="ConfiguracaoService - AtualizarConfig OK">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" afterDir="false" />
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="MarcaService - cadastrar, atualizarMarca OK">
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MarcaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MarcaService.java" afterDir="false" />
     </list>
     <list id="bc9b78df-9835-401f-91fa-d541226f40d7" name="Changes by jeanf" comment="">
@@ -42,14 +40,6 @@
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="bc9b78df-9835-401f-91fa-d541226f40d7" />
-        <range start1="14" end1="14" start2="15" end2="17" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -161,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683411355353</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="MarcaService - cadastrar, atualizarMarca OK">
+      <created>1683413066724</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683413066724</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +194,7 @@
     <MESSAGE value="CondutorService - editar OK" />
     <MESSAGE value="CondutorService - desativarCondutor OK" />
     <MESSAGE value="ConfiguracaoService - AtualizarConfig OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="ConfiguracaoService - AtualizarConfig OK" />
+    <MESSAGE value="MarcaService - cadastrar, atualizarMarca OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="MarcaService - cadastrar, atualizarMarca OK" />
   </component>
 </project>
