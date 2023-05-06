@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="MarcaService - desativarMarca OK">
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="MovimentacaoService - desativar OK">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MovimentacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MovimentacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/VeiculoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/VeiculoService.java" afterDir="false" />
     </list>
     <list id="bc9b78df-9835-401f-91fa-d541226f40d7" name="Changes by jeanf" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MarcaRepository.java" afterDir="false" />
@@ -41,6 +42,14 @@
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/VeiculoRepository.java">
+      <ranges>
+        <range start1="17" end1="17" start2="17" end2="19" changelist="e3e83138-c892-4786-a293-0e1c35d022e5" />
+        <range start1="18" end1="19" start2="20" end2="20" changelist="bc9b78df-9835-401f-91fa-d541226f40d7" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -166,7 +175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683413361781</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="MovimentacaoService - cadastrar, atualizarMovimentacao OK">
+      <created>1683414006896</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683414006896</updated>
+    </task>
+    <task id="LOCAL-00014" summary="MovimentacaoService - desativar OK">
+      <created>1683414108260</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683414108260</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +227,8 @@
     <MESSAGE value="ConfiguracaoService - AtualizarConfig OK" />
     <MESSAGE value="MarcaService - cadastrar, atualizarMarca OK" />
     <MESSAGE value="MarcaService - desativarMarca OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="MarcaService - desativarMarca OK" />
+    <MESSAGE value="MovimentacaoService - cadastrar, atualizarMovimentacao OK" />
+    <MESSAGE value="MovimentacaoService - desativar OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="MovimentacaoService - desativar OK" />
   </component>
 </project>
