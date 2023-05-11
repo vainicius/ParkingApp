@@ -22,12 +22,14 @@ public class MovimentacaoService {
     private VeiculoRepository veiculoRepository;
 
     public Movimentacao cadastrar(Movimentacao movimentacao){
+
         Assert.notNull(movimentacao.getCondutor(), "O campo 'condutor' não pode ser nulo!");
         Assert.notNull(movimentacao.getEntrada(), "O campo 'entrada' não pode ser nulo!");
         Assert.notNull(movimentacao.getVeiculo(), "O campo 'veiculo' não pode ser nulo!");
 
         final Condutor condutor = this.condutorRepository.findById(movimentacao.getCondutor().getId()).orElse(null);
         Assert.notNull(condutor, "Condutor não localizado!");
+        Assert.isTrue(!condutor.isAtivo(),"Condutor não está ativo!");
         final Veiculo veiculo = this.veiculoRepository.findById(movimentacao.getVeiculo().getId()).orElse(null);
         Assert.notNull(veiculo, "Veiculo não localizado!");
 

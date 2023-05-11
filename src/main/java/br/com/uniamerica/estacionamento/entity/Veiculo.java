@@ -16,6 +16,7 @@ public class Veiculo extends AbstractEntity {
     @JoinColumn(name="",nullable = false)
     private Modelo modelo;
     @Enumerated(EnumType.STRING)
+
     @Getter @Setter
     @Column(name="cor",nullable = false)
     private Cor cor;

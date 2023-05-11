@@ -1,5 +1,6 @@
 package br.com.uniamerica.estacionamento.service;
 
+import br.com.uniamerica.estacionamento.entity.Condutor;
 import br.com.uniamerica.estacionamento.entity.Modelo;
 import br.com.uniamerica.estacionamento.entity.Movimentacao;
 import br.com.uniamerica.estacionamento.entity.Veiculo;
@@ -24,14 +25,14 @@ public class VeiculoService {
     private MovimentacaoRepository movimentacaoRepository;
 
     @Transactional
-    public Veiculo atualizarVeiculo(Veiculo veiculo){
+    public Veiculo atualizarVeiculo(Veiculo veiculo) {
         Assert.notNull(veiculo.getPlaca(), "O campo 'Placa' não pode ser nulo!");
         Assert.notNull(veiculo.getTipo(), "O campo 'Tipo' não pode ser nulo!");
         Assert.notNull(veiculo.getCor(), "O campo 'Cor' não pode ser nulo!");
 
 
         final List<Veiculo> veiculos = this.veiculoRepository.findByPlaca(veiculo.getPlaca());
-        Assert.isTrue(veiculos.isEmpty(),"Veículo já cadastrado.");
+        Assert.isTrue(veiculos.isEmpty(), "Veículo já cadastrado.");
 
         Assert.notNull(veiculo.getModelo(), "o campo 'Modelo' não pode ser nulo!");
 
@@ -40,20 +41,34 @@ public class VeiculoService {
 
         return this.veiculoRepository.save(veiculo);
     }
+
     @Transactional
-    public ResponseEntity<?> desativarVeiculo(Long id){
+    public ResponseEntity<?> desativarVeiculo(Long id) {
 
         final Veiculo veiculoBanco = this.veiculoRepository.findById(id).orElse(null);
         Assert.notNull(veiculoBanco, "Modelo não localizado!");
 
-        if(!this.movimentacaoRepository.findByVeiculoId(id).isEmpty()){
+        if (!this.movimentacaoRepository.findByVeiculoId(id).isEmpty()) {
             veiculoBanco.setAtivo(false); //desativando o Veículo se ele possuir relação com Movimentação
             this.veiculoRepository.save(veiculoBanco);
             return ResponseEntity.ok("Veículo desativado.");
-        }else{
+        } else {
             this.veiculoRepository.delete(veiculoBanco);
             return ResponseEntity.ok("Veículo deletado.");
         }
     }
 
+    @Transactional
+    public Veiculo cadastrar(Veiculo veiculo) {
+        Assert.notNull(veiculo.getPlaca(), "O campo 'placa' não pode ser nulo!");
+        Assert.notNull(veiculo.getTipo(), "O campo 'tipo' não pode ser nulo! ");
+        Assert.notNull(veiculo.getModelo(), "O campo 'modelo' não pode ser nulo!");
+        Assert.notNull(veiculo.getAno(), "O campo 'ano' não pode ser nulo!");
+        Assert.notNull(veiculo.getCor(), "O campo 'cor' não pode ser nulo!");
+
+        final Veiculo veiculoBanco = this.veiculoRepository.findById(veiculo.getId()).orElse(null);
+        Assert.notNull(veiculoBanco, "Veículo não localizado!");
+
+        return this.veiculoRepository.save(veiculo);
+    }
 }
