@@ -85,8 +85,6 @@ public class MovimentacaoController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
 }
-
 
 

@@ -15,7 +15,7 @@ import java.time.LocalTime;
 public class Condutor extends AbstractEntity {
 
     @Getter @Setter
-    @Column(name="nome_condutor",nullable = false, length = 100)
+    @Column(name="nome_condutor",nullable = false, length = 50)
     private String nomeCondutor;
 
     @Getter @Setter

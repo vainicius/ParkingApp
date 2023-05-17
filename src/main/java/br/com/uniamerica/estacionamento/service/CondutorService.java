@@ -25,6 +25,7 @@ public class CondutorService {
         Assert.notNull(condutor.getCpf(),"O campo 'cpf' não pode ser nulo!");
         final List<Condutor>Condutores = this.condutorRepository.findByCpf(condutor.getCpf());
         Assert.isTrue(Condutores.isEmpty(),"Cpf já cadastrado.");
+        Assert.isTrue(condutor.getNomeCondutor().length() <=50,String.format("O nome do condutor possui %s caracteres, o limite é 50!", condutor.getNomeCondutor().length()));
 
         return this.condutorRepository.save(condutor);
     }
@@ -38,11 +39,10 @@ public class CondutorService {
 
         Assert.notNull(condutor.getCadastro(), "O campo 'cadastro' não pode ser nulo!");
         Assert.notNull(condutor.getNomeCondutor(), "O campo 'nome' não pode ser nulo!");
+        Assert.isTrue(  condutor.getNomeCondutor().length() <=50,"O nome do condutor possui mais de 50 caracteres!");
         Assert.notNull(condutor.getCpf(), "O campo 'cpf' não pode ser nulo!");
-
-        final List<Condutor>Condutores = this.condutorRepository.findByCpf(condutor.getCpf());
-        Assert.isTrue(Condutores.isEmpty(),"Cpf já cadastrado.");
-
+        final List<Condutor>condutores = this.condutorRepository.findByCpf(condutor.getCpf());
+        Assert.isTrue(condutores.isEmpty(),("Cpf já cadastrado com o nome"));
         return this.condutorRepository.save(condutor);
     }
 
@@ -60,4 +60,7 @@ public class CondutorService {
             return ResponseEntity.ok("Condutor deletado.");
         }
     }
+
+
+
 }

@@ -1,8 +1,10 @@
 package br.com.uniamerica.estacionamento.controller;
 
 import br.com.uniamerica.estacionamento.entity.Condutor;
+import br.com.uniamerica.estacionamento.entity.Movimentacao;
 import br.com.uniamerica.estacionamento.repository.CondutorRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
+import br.com.uniamerica.estacionamento.service.CondutorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -10,12 +12,14 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(value = "/api/condutor")
+
 public class CondutorController {
     @Autowired
     private CondutorRepository condutorRepository;
     @Autowired
     private MovimentacaoRepository movimentacaoRepository;
-
+    @Autowired
+    private CondutorService condutorService;
     @GetMapping
     public ResponseEntity<?> findById(@RequestParam("id") final Long id){
         final Condutor condutor = this.condutorRepository.findById(id).orElse(null);
@@ -33,7 +37,8 @@ public class CondutorController {
     @PostMapping
     public ResponseEntity<?> cadastrar (@RequestBody final Condutor condutor){
         try{
-            this.condutorRepository.save(condutor);
+
+            final Condutor condutorBanco = this.condutorService.cadastrar(condutor);
             return ResponseEntity.ok("Ok");
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -48,7 +53,7 @@ public class CondutorController {
             final Condutor condutorBanco = this.condutorRepository.findById(id).orElse(null);
 
             if (condutorBanco == null || !condutorBanco.getId().equals(condutor.getId())) {
-                throw new RuntimeException("Não foi possivel identifica o condutor informado!");
+                throw new RuntimeException("Não foi possivel identificar o condutor informado!");
             }
 
             this.condutorRepository.save(condutor);
@@ -75,8 +80,11 @@ public class CondutorController {
                 this.condutorRepository.delete(condutorBanco); //deleta o Banco
                 return ResponseEntity.ok("Condutor apagada com sucesso!");
             }
+
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+
 }

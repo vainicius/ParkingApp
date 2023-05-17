@@ -33,6 +33,7 @@ public class MovimentacaoService {
         final Veiculo veiculo = this.veiculoRepository.findById(movimentacao.getVeiculo().getId()).orElse(null);
         Assert.notNull(veiculo, "Veiculo não localizado!");
 
+
         return this.movimentacaoRepository.save(movimentacao);
     }
     public Movimentacao atualizarMovimentacao(Long id, Movimentacao movimentacao){
@@ -63,5 +64,10 @@ public class MovimentacaoService {
         movimentacao.setAtivo(false);
         return ResponseEntity.ok("Movimentação deletada.");
     }
+
+
+
+
+
 
 }
