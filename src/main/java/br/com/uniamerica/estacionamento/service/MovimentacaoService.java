@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import java.time.Duration;
+
 @Service
 public class MovimentacaoService {
     @Autowired
@@ -20,6 +22,7 @@ public class MovimentacaoService {
     private CondutorRepository condutorRepository;
     @Autowired
     private VeiculoRepository veiculoRepository;
+
 
     public Movimentacao cadastrar(Movimentacao movimentacao){
 
@@ -51,6 +54,10 @@ public class MovimentacaoService {
         Assert.notNull(condutor, "Condutor não localizado!");
         final Veiculo veiculo = this.veiculoRepository.findById(movimentacao.getVeiculo().getId()).orElse(null);
         Assert.notNull(veiculo, "Veiculo não localizado!");
+
+        Duration duration = Duration.between(movimentacao.getEntrada(), movimentacao.getSaida());
+        Long duracao;
+        duracao = duration.toMinutes();
 
         return this.movimentacaoRepository.save(movimentacao);
 

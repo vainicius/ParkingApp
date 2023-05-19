@@ -21,8 +21,8 @@ public class CondutorService {
 
     @Transactional
     public Condutor cadastrar(final Condutor condutor){
-        Assert.notNull(condutor.getNomeCondutor(),"O campo 'nome' não pode ser nulo!");
-        Assert.notNull(condutor.getCpf(),"O campo 'cpf' não pode ser nulo!");
+        Assert.hasText(condutor.getNomeCondutor(),"O campo 'nome' não pode ser nulo!");
+        Assert.hasText(condutor.getCpf(),"O campo 'cpf' não pode ser nulo!");
         final List<Condutor>Condutores = this.condutorRepository.findByCpf(condutor.getCpf());
         Assert.isTrue(Condutores.isEmpty(),"Cpf já cadastrado.");
         Assert.isTrue(condutor.getNomeCondutor().length() <=50,String.format("O nome do condutor possui %s caracteres, o limite é 50!", condutor.getNomeCondutor().length()));

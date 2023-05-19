@@ -1,16 +1,15 @@
 package br.com.uniamerica.estacionamento.controller;
 
 import br.com.uniamerica.estacionamento.entity.Condutor;
-import br.com.uniamerica.estacionamento.entity.Movimentacao;
 import br.com.uniamerica.estacionamento.repository.CondutorRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.service.CondutorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-@Controller
+@RestController
 @RequestMapping(value = "/api/condutor")
 
 public class CondutorController {
@@ -35,7 +34,7 @@ public class CondutorController {
         return ResponseEntity.ok(this.condutorRepository.findByAtivo());
     }
     @PostMapping
-    public ResponseEntity<?> cadastrar (@RequestBody final Condutor condutor){
+    public ResponseEntity<?> cadastrar (@RequestBody @Validated final Condutor condutor){
         try{
 
             final Condutor condutorBanco = this.condutorService.cadastrar(condutor);

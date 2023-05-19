@@ -4,6 +4,7 @@ package br.com.uniamerica.estacionamento.controller;
 import br.com.uniamerica.estacionamento.entity.Movimentacao;
 import br.com.uniamerica.estacionamento.repository.CondutorRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
+import br.com.uniamerica.estacionamento.service.MovimentacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,8 @@ public class MovimentacaoController {
     private MovimentacaoRepository movimentacaoRepository;
     @Autowired
     private CondutorRepository condutorRepository;
+    @Autowired
+    private MovimentacaoService movimentacaoService;
 
     @GetMapping
     public ResponseEntity<?> findById(@RequestParam("id") final Long id) {
@@ -38,7 +41,7 @@ public class MovimentacaoController {
     @PostMapping
     public ResponseEntity<?> cadastrar(@RequestBody final Movimentacao movimentacao) {
         try {
-            this.movimentacaoRepository.save(movimentacao);
+            final Movimentacao movimentacaoBanco = this.movimentacaoService.cadastrar(movimentacao);
             return ResponseEntity.ok("Ok");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
