@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class AbstractEntity {
     @Id
     @Getter
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
     @Getter @Setter

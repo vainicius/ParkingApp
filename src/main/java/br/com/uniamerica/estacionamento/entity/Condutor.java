@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalTime;
 
@@ -24,6 +25,7 @@ public class Condutor extends AbstractEntity {
     @Column(name="nome_condutor",nullable = false, length = 50)
     private String nomeCondutor;
 
+    @CPF(message = "CPF inválido!")
     @Getter @Setter
     @Column(name="cpf",nullable = false,unique = true,length = 15)
     private String cpf;
