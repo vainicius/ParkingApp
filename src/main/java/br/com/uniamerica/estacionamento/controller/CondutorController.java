@@ -55,7 +55,8 @@ public class CondutorController {
                 throw new RuntimeException("Não foi possivel identificar o condutor informado!");
             }
 
-            this.condutorRepository.save(condutor);
+            final Condutor condutorAtualizado = this.condutorService.editar(condutor);
+
             return ResponseEntity.ok("Condutor atualizado com sucesso");
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());

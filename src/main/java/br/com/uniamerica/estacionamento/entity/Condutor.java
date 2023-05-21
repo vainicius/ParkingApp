@@ -19,17 +19,19 @@ import java.time.LocalTime;
 @Table(name="condutor_table",schema = "public")
 public class Condutor extends AbstractEntity {
 
-
+    @NotNull(message = "O campo 'nome' não pode ser nulo!")
     @Size(min = 3, max = 50, message = "Tamanho mínimo: 3. Tamanho Máximo: 50")
     @Getter @Setter
     @Column(name="nome_condutor",nullable = false, length = 50)
     private String nomeCondutor;
 
-    @CPF(message = "CPF inválido!")
+    @NotNull(message = "O campo 'CPF' não pode ser nulo!")
+    //@CPF(message = "CPF inválido!")
     @Getter @Setter
     @Column(name="cpf",nullable = false,unique = true,length = 15)
     private String cpf;
 
+    @NotNull(message = "O campo 'telefone' não pode ser nulo!")
     @Getter @Setter
     @Column(name="telefone",nullable = false,unique = true,length = 17)
     private String telefone;
