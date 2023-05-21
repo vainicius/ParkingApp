@@ -24,7 +24,7 @@ public class ModeloService {
 
     @Transactional(readOnly = true,rollbackFor = Exception.class)
     public Modelo cadastrar(final Modelo modelo){
-        Assert.notNull(modelo.getNomeModelo(), "O nome não pode estar vazio");
+        Assert.hasText(modelo.getNomeModelo(), "O nome não pode estar vazio");
         Assert.notNull(modelo.getMarca(),"A marca não pode ser vazia");
         final Marca marca = this.marcaRepository.findById(modelo.getMarca().getId()).orElse(null);
         Assert.notNull(marca,"Marca não existe");

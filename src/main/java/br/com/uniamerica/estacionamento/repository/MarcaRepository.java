@@ -13,5 +13,5 @@ public interface MarcaRepository extends JpaRepository<Marca, Long>  {
     @Query("from Marca where ativo = true")
     public List<Marca> findByAtivo();
     @Query("from Marca where nomeMarca = :nomeMarca")
-    public List<Marca> findByNome(@Param("nome") final String nome);
+    public List<Marca> findByNome(@Param("nomeMarca") final String nomeMarca);
 }

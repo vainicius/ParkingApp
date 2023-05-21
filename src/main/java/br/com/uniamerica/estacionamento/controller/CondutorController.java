@@ -75,10 +75,10 @@ public class CondutorController {
             if(!this.movimentacaoRepository.findByCondutorId(id).isEmpty()){
                 condutorBanco.setAtivo(false); //Altera par falso
                 this.condutorRepository.save(condutorBanco); //Salva o novo status
-                return ResponseEntity.ok("Condutor desativada com sucesso!");
+                return ResponseEntity.ok("Condutor desativado, pois existe histórico de movimentação!");
             }else{
                 this.condutorRepository.delete(condutorBanco); //deleta o Banco
-                return ResponseEntity.ok("Condutor apagada com sucesso!");
+                return ResponseEntity.ok("Condutor apagado com sucesso!");
             }
 
         }catch (Exception e){

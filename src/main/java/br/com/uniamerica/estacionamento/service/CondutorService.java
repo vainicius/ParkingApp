@@ -39,10 +39,12 @@ public class CondutorService {
         Assert.isTrue(condutorBanco.getId().equals(condutor.getId()),"O condutor a ser editado indefere com o condutor cadastrado!");
 
         Assert.notNull(condutor.getCadastro(), "O campo 'cadastro' não pode ser nulo!");
-        Assert.notNull(condutor.getNomeCondutor(), "O campo 'nome' não pode ser nulo!");
+        Assert.hasText(condutor.getNomeCondutor(), "O campo 'nome' não pode ser nulo!");
         Assert.isTrue(  condutor.getNomeCondutor().length() <=50,"O nome do condutor possui mais de 50 caracteres!");
         Assert.notNull(condutor.getCpf(), "O campo 'cpf' não pode ser nulo!");
         final List<Condutor>Condutores = this.condutorRepository.findByCpf(condutor.getCpf());
+        final List<Condutor>CondutoresTelefone = this.condutorRepository.findByTelefone(condutor.getTelefone());
+        Assert.isTrue(CondutoresTelefone.isEmpty(),"Telefone já cadastrado.");
         Assert.isTrue(Condutores.isEmpty(),"Cpf já cadastrado.");
         return this.condutorRepository.save(condutor);
     }
@@ -55,10 +57,10 @@ public class CondutorService {
         if(!this.movimentacaoRepository.findByVeiculoId(id).isEmpty()){
             condutorBanco.setAtivo(false); //Desativando o condutor caso ele esteja vinculado a uma movimentação
             this.condutorRepository.save(condutorBanco);
-            return ResponseEntity.ok("Condutor desativado.");
+            return ResponseEntity.ok("Condutor desativado, pois existe histórico de movimentação!.");
         }else{
             this.condutorRepository.delete(condutorBanco);
-            return ResponseEntity.ok("Condutor deletado.");
+            return ResponseEntity.ok("Condutor deletado com sucesso.");
         }
     }
 

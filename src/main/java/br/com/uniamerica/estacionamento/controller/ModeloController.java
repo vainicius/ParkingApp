@@ -6,6 +6,7 @@ import br.com.uniamerica.estacionamento.entity.Veiculo;
 import br.com.uniamerica.estacionamento.repository.ModeloRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
+import br.com.uniamerica.estacionamento.service.ModeloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,8 @@ public class ModeloController {
     private ModeloRepository modeloRepository;
     @Autowired
     private VeiculoRepository veiculoRepository;
+    @Autowired
+    private ModeloService modeloService;
 
 
     @GetMapping
@@ -39,7 +42,7 @@ public class ModeloController {
     @PostMapping
     public ResponseEntity<?> cadastrar(@RequestBody final Modelo modelo){
         try{
-            this.modeloRepository.save(modelo);
+            final Modelo modeloBanco = this.modeloService.cadastrar(modelo);
             return ResponseEntity.ok("Registro feito com sucesso");
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e);
@@ -58,7 +61,7 @@ public class ModeloController {
                 throw new RuntimeException("Não foi possivel identificar o registro informado");
             }
 
-            this.modeloRepository.save(modelo);
+            final Modelo modeloAtualizado = this.modeloService.cadastrar(modelo);
             return ResponseEntity.ok("Registro atualizado com sucesso");
 
         }catch (Exception e){
