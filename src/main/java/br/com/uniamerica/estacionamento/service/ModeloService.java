@@ -22,7 +22,7 @@ public class ModeloService {
     @Autowired
     private VeiculoRepository veiculoRepository;
 
-    @Transactional(readOnly = true,rollbackFor = Exception.class)
+    @Transactional
     public Modelo cadastrar(final Modelo modelo){
         Assert.hasText(modelo.getNomeModelo(), "O nome não pode estar vazio");
         Assert.notNull(modelo.getMarca(),"A marca não pode ser vazia");

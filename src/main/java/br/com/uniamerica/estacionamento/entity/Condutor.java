@@ -26,7 +26,7 @@ public class Condutor extends AbstractEntity {
     private String nomeCondutor;
 
     @NotNull(message = "O campo 'CPF' não pode ser nulo!")
-    //@CPF(message = "CPF inválido!")
+    @CPF(message = "CPF inválido!")
     @Getter @Setter
     @Column(name="cpf",nullable = false,unique = true,length = 15)
     private String cpf;
