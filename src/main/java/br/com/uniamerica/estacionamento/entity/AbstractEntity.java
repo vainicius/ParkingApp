@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 public class AbstractEntity {
     @Id
     @Getter
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false, unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true)
     private Long id;
     @Getter @Setter
     @Column(name ="dtCadastro",nullable = false)
