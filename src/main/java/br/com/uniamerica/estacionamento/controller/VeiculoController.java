@@ -3,6 +3,7 @@ package br.com.uniamerica.estacionamento.controller;
 import br.com.uniamerica.estacionamento.entity.Veiculo;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
+import br.com.uniamerica.estacionamento.service.VeiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,8 @@ public class VeiculoController {
     private VeiculoRepository veiculoRepository;
     @Autowired
     private MovimentacaoRepository movimentacaoRepository;
-
+    @Autowired
+    private VeiculoService veiculoService;
     @GetMapping
     public ResponseEntity<?> findById(@RequestParam("id") final Long id){
         final Veiculo veiculo = this.veiculoRepository.findById(id).orElse(null);
@@ -34,7 +36,7 @@ public class VeiculoController {
     @PostMapping
     public ResponseEntity<?> cadastrar (@RequestBody final Veiculo veiculo){
         try{
-            this.veiculoRepository.save(veiculo);
+            final Veiculo veiculoBanco = this.veiculoService.cadastrar(veiculo);
             return ResponseEntity.ok("Ok");
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -52,7 +54,7 @@ public class VeiculoController {
                 throw new RuntimeException("Não foi possivel identificar o veiculo informado!");
             }
 
-            this.veiculoRepository.save(veiculo);
+            final Veiculo veiculoAtualizado = this.veiculoService.atualizarVeiculo(veiculo);
             return ResponseEntity.ok("Veiculo atualizado com sucesso");
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());

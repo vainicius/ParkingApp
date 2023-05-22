@@ -33,12 +33,12 @@ public class ModeloController {
 
         return modelo == null ? ResponseEntity.badRequest().body("Nenhum modelo encontrado") : ResponseEntity.ok(modelo);
     }
-
-    @GetMapping("/lista ")
-    public ResponseEntity<?> listaCompleta(){
+//----------------------------------- FIND ALL ------------------------------------------------
+    @GetMapping("/lista")
+    public ResponseEntity<?> findAll(){
         return ResponseEntity.ok(this.modeloRepository.findAll());
     }
-
+//-------------------------------------- CADASTRAR -----------------------------------------
     @PostMapping
     public ResponseEntity<?> cadastrar(@RequestBody final Modelo modelo){
         try{
@@ -48,7 +48,7 @@ public class ModeloController {
             return ResponseEntity.badRequest().body(e);
         }
     }
-
+//---------------------------------------- PUT -----------------------------------------
     @PutMapping
     public ResponseEntity<?> editar(
             @RequestParam("id") final Long id,
@@ -68,10 +68,12 @@ public class ModeloController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+    //--------------------------------- FIND BY ATIVOS -----------------------
     @GetMapping("/lista/ativos")
     public ResponseEntity<?> findAllAtivos(){
         return ResponseEntity.ok(this.modeloRepository.findByAtivo());
     }
+    //---------------------------- DELETE ------------------------------------
     @DeleteMapping
     public ResponseEntity<?> desativarModelo(
             @RequestParam("id") final Long id

@@ -1,6 +1,9 @@
 package br.com.uniamerica.estacionamento.entity;
 
-public enum Tipo {
+import jakarta.persistence.Enumerated;
+
+
+public enum Tipo  {
 
 CARRO, MOTO, VAN;
 

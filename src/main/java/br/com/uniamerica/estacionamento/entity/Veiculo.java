@@ -12,11 +12,11 @@ public class Veiculo extends AbstractEntity {
     @Column(name="placa", nullable = false, length = 15)
     private String placa;
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name="",nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name="modelo_id",nullable = false)
     private Modelo modelo;
-    @Enumerated(EnumType.STRING)
 
+    @Enumerated(EnumType.STRING)
     @Getter @Setter
     @Column(name="cor",nullable = false)
     private Cor cor;

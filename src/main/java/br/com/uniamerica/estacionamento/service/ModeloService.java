@@ -32,8 +32,8 @@ public class ModeloService {
         return this.modeloRepository.save(modelo);
     }
     @Transactional
-    public Modelo editar(Long id,Modelo modelo){
-        final Modelo modeloBanco = this.modeloRepository.findById(id).orElse(null);
+    public Modelo editar(Modelo modelo){
+        final Modelo modeloBanco = this.modeloRepository.findById(modelo.getId()).orElse(null);
         Assert.notNull(modeloBanco,"Modelo não existe!");
         Assert.isTrue(modeloBanco.getId().equals(modelo.getId()),"O modelo a ser editado indefere com o modelo cadastrado!.");
         Assert.notNull(modelo.getNomeModelo(),"O campo 'nome' não pode ser nulo!");

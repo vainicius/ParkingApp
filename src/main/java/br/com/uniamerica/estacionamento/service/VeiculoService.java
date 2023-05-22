@@ -1,9 +1,6 @@
 package br.com.uniamerica.estacionamento.service;
 
-import br.com.uniamerica.estacionamento.entity.Condutor;
-import br.com.uniamerica.estacionamento.entity.Modelo;
-import br.com.uniamerica.estacionamento.entity.Movimentacao;
-import br.com.uniamerica.estacionamento.entity.Veiculo;
+import br.com.uniamerica.estacionamento.entity.*;
 import br.com.uniamerica.estacionamento.repository.ModeloRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
@@ -60,7 +57,7 @@ public class VeiculoService {
 
     @Transactional
     public Veiculo cadastrar(Veiculo veiculo) {
-        Assert.notNull(veiculo.getPlaca(), "O campo 'placa' não pode ser nulo!");
+        Assert.hasText(veiculo.getPlaca(), "O campo 'placa' não pode ser nulo!");
         Assert.notNull(veiculo.getTipo(), "O campo 'tipo' não pode ser nulo! ");
         Assert.notNull(veiculo.getModelo(), "O campo 'modelo' não pode ser nulo!");
         Assert.notNull(veiculo.getAno(), "O campo 'ano' não pode ser nulo!");
@@ -68,7 +65,9 @@ public class VeiculoService {
 
         final Veiculo veiculoBanco = this.veiculoRepository.findById(veiculo.getId()).orElse(null);
         Assert.notNull(veiculoBanco, "Veículo não localizado!");
-
+        final Modelo modelo = new Modelo();
+       final Modelo modelos = this.modeloRepository.findById(modelo.getId()).orElse(null);
+        Assert.notNull(modelos,"Modelo não localizado!");
         return this.veiculoRepository.save(veiculo);
     }
 }
