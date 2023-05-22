@@ -63,10 +63,10 @@ public class VeiculoService {
         Assert.notNull(veiculo.getAno(), "O campo 'ano' não pode ser nulo!");
         Assert.notNull(veiculo.getCor(), "O campo 'cor' não pode ser nulo!");
 
-        final Veiculo veiculoBanco = this.veiculoRepository.findById(veiculo.getId()).orElse(null);
-        Assert.notNull(veiculoBanco, "Veículo não localizado!");
-        final Modelo modelo = new Modelo();
-       final Modelo modelos = this.modeloRepository.findById(modelo.getId()).orElse(null);
+        final List<Veiculo> veiculoBanco = this.veiculoRepository.findByPlaca(veiculo.getPlaca());
+        Assert.isTrue(veiculoBanco.isEmpty(), "Placa já cadastrada!");
+
+       final Modelo modelos = this.modeloRepository.findById(veiculo.getModelo().getId()).orElse(null);
         Assert.notNull(modelos,"Modelo não localizado!");
         return this.veiculoRepository.save(veiculo);
     }

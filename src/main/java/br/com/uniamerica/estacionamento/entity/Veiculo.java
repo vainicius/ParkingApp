@@ -1,5 +1,8 @@
 package br.com.uniamerica.estacionamento.entity;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -11,8 +14,9 @@ public class Veiculo extends AbstractEntity {
     @Getter @Setter
     @Column(name="placa", nullable = false, length = 15)
     private String placa;
+
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name="modelo_id",nullable = false)
     private Modelo modelo;
 

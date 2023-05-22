@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Alterações para resolver o erro &quot;The given id must not be null&quot; no Postman.">
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Alterando tudo para @RestController pois estou desesperado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/AbstractEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Tipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Tipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/configuracao/ExceptionHandlerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/configuracao/ExceptionHandlerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/VeiculoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/VeiculoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/AbstractEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/AbstractEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Veiculo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Veiculo.class" afterDir="false" />
     </list>
     <list id="bc9b78df-9835-401f-91fa-d541226f40d7" name="Changes by jeanf" comment="" />
@@ -106,7 +109,7 @@
       <workItem from="1684448527385" duration="7352000" />
       <workItem from="1684686071176" duration="60000" />
       <workItem from="1684686775314" duration="26003000" />
-      <workItem from="1684792125992" duration="1403000" />
+      <workItem from="1684792125992" duration="5919000" />
     </task>
     <task id="LOCAL-00001" summary="Elements creation and initial DB configuration.">
       <created>1679955148571</created>
@@ -262,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684725962473</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Alterando tudo para @RestController pois estou desesperado">
+      <created>1684793751910</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684793751910</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +334,8 @@
     <MESSAGE value="MarcaRepository - bug 'FindByNome' resolvido" />
     <MESSAGE value="Modelo - CascadeType.ALL -&gt; CascadeType.MERGE" />
     <MESSAGE value="Alterações para resolver o erro &quot;The given id must not be null&quot; no Postman." />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterações para resolver o erro &quot;The given id must not be null&quot; no Postman." />
+    <MESSAGE value="Alterando tudo para @RestController pois estou desesperado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterando tudo para @RestController pois estou desesperado" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ParkingApp$EstacionamentoApplication.ic" NAME="EstacionamentoApplication Coverage Results" MODIFIED="1684447622993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

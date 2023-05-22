@@ -17,8 +17,8 @@ public class Modelo extends AbstractEntity {
     @Column(name="nome_modelo", nullable = false, length = 30)
     private String nomeModelo;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinColumn(name="",nullable = false)
+    @ManyToOne
+    @JoinColumn(nullable = false)
     @Getter @Setter
     private Marca marca;
 
