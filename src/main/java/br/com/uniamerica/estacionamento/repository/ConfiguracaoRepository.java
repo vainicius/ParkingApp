@@ -13,4 +13,7 @@ public interface ConfiguracaoRepository extends JpaRepository<Configuracao, Long
 //    @Query("from Configuracao where valorHora = :valorHora")
 //    public List<Configuracao> findByLike(@Param("valorHora")final BigDecimal valorHora);
 
+    @Query("from Configuracao where id = 1 order by id desc limit 1")
+    public Configuracao findByConfiguracao();
+
 }
