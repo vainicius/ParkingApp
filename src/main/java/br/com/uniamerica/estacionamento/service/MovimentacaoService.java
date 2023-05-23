@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -46,9 +47,9 @@ public class MovimentacaoService {
 
         return this.movimentacaoRepository.save(movimentacao);
     }
-    public Movimentacao atualizarMovimentacao(Long id, Movimentacao movimentacao){
+    public Movimentacao atualizarMovimentacao(Movimentacao movimentacao){
 
-        final Movimentacao movimentacaoBanco = this.movimentacaoRepository.findById(id).orElse(null);
+        final Movimentacao movimentacaoBanco = this.movimentacaoRepository.findById(movimentacao.getId()).orElse(null);
         Assert.notNull(movimentacaoBanco, "Movimentação não localizada!");
         Assert.isTrue(movimentacaoBanco.getId().equals(movimentacao.getId()), "Movimentação informada indefere com a cadastrada!");
 
@@ -70,16 +71,15 @@ public class MovimentacaoService {
 */
 
         final Configuracao configuracao = this.configuracaoRepository.findByConfiguracao();
-        LocalDateTime dataEntrada = movimentacao.getEntrada();
-        LocalDateTime dataSaida = movimentacao.getSaida();
+        LocalDateTime entrada = movimentacao.getEntrada();
+        LocalDateTime saida = movimentacao.getSaida();
 
-        Duration tempoEstacionado = Duration.between(dataEntrada, dataSaida);
+        Duration tempoEstacionado = Duration.between(entrada, saida);
 
         long tempoEstacionadoTotal = tempoEstacionado.toMinutes();
         movimentacao.setTempoEstacionadoMinutos(tempoEstacionadoTotal);
 
-        LocalDateTime entrada = movimentacao.getEntrada();
-        LocalDateTime saida = movimentacao.getSaida();
+
 
         int ano = saida.getYear() - entrada.getYear(); //Subtraindo o ano de entrada e o ano de saida
         int dias = saida.getDayOfYear() - entrada.getDayOfYear(); //Subtraindo o dia de entrada e o dia de saida
@@ -108,7 +108,7 @@ public class MovimentacaoService {
         /***
          * Calculando os dias
          */
-        if ( ano > 0 ) {
+        if ( ano > 0 ) { //Caso tenha mais que um ano, ele irá acrescentar 365 dias.
             dias += 365*ano;
         }
         if (dias > 0){
@@ -139,6 +139,22 @@ public class MovimentacaoService {
 
 
         movimentacao.setValorMulta(valorMulta);
+/*
+        Duration duration = Duration.between(entrada, saida);
+        long duracao;
+        duracao = duration.toMinutes();
+*/
+        // Setando na movimentação as Horas, Minutos e valorHoraMinuto
+        movimentacao.setMinutostempo((int)tempoTotal%60);
+        movimentacao.setHorastempo((int)tempoTotal/60);
+
+        // Calcula o valor total
+
+        movimentacao.setValorTotal(                 //Calculando o valor total multiplicando as horas da movimentação com o valor hora e somando os minutos multiplicando pelo valor hora e dividindo por 60
+                new BigDecimal(movimentacao.getHorastempo()).multiply(movimentacao.getValorHora())
+                        .add(new BigDecimal(movimentacao.getMinutostempo()).multiply(movimentacao.getValorHora()
+                                .divide(new BigDecimal(60), RoundingMode.HALF_UP))) //Arredondando para 60
+                        .add(valorMulta));//Somando o valor da multa
 
 
 

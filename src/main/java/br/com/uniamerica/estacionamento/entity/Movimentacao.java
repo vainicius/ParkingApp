@@ -60,4 +60,11 @@ public class Movimentacao extends AbstractEntity {
     @Getter @Setter
     @Column(name = "tempo_desconto")
     private long tempoDescontoMinutos;
+    @Getter @Setter
+    @Column(name = "horas_tempo_total")
+    private int horastempo;
+
+    @Getter @Setter
+    @Column(name = "minutos_tempo_total")
+    private int minutostempo;
 }

@@ -59,8 +59,8 @@ public class MovimentacaoController {
             if (movimentacaoBanco == null || !movimentacaoBanco.getId().equals(movimentacao.getId())) {
                 throw new RuntimeException("Não foi possivel identificar a movimentacao informada!");
             }
-
-            return ResponseEntity.ok("Movimentacao atualizado com sucesso");
+            final Movimentacao movimentacaoAtualizada = this.movimentacaoService.atualizarMovimentacao(movimentacao);
+            return ResponseEntity.ok("Movimentação atualizada com sucesso!");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

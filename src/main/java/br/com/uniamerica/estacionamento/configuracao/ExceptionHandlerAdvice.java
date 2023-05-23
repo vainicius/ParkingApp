@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 @RestControllerAdvice
-public class ExceptionHandlerAdvice {
+public class
+ExceptionHandlerAdvice {
     /**
      *
      * @param methodArgumentNotValidException
