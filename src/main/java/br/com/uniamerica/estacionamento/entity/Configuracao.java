@@ -16,15 +16,18 @@ import java.time.LocalTime;
 @Entity
 
 public class Configuracao extends AbstractEntity {
+    @NotNull(message = "O campo 'valorHora' não pode ser nulo!")
     @Getter @Setter
     @Column(name="valor_hora", nullable = false)
     private BigDecimal valorHora;
     @Getter @Setter
     @Column(name="valor_minuto_multa")
     private BigDecimal valorMinutoMulta;
+    @NotNull(message = "O campo 'inicioExpediente' não pode ser nulo!")
     @Getter @Setter
     @Column(name="inicio_expediente", nullable = false)
     private LocalTime inicioExpediente;
+    @NotNull(message = "O campo 'fimExpediente' não pode ser nulo!")
     @Getter @Setter
     @Column(name="fim_expediente", nullable = false)
     private LocalTime fimExpediente;

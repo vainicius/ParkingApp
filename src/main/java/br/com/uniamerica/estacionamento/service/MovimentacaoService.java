@@ -35,10 +35,10 @@ public class MovimentacaoService {
 
         final Condutor condutor = this.condutorRepository.findById(movimentacao.getCondutor().getId()).orElse(null);
         Assert.notNull(condutor, "Condutor não localizado!");
-        //Assert.isTrue(!condutor.isAtivo(),"Condutor não está ativo!");
+        Assert.isTrue(condutor.isAtivo(),"Condutor não está ativo!");
         final Veiculo veiculo = this.veiculoRepository.findById(movimentacao.getVeiculo().getId()).orElse(null);
         Assert.notNull(veiculo, "Veiculo não localizado!");
-
+        Assert.isTrue(veiculo.isAtivo(),"Veículo não está ativo!");
 
         return this.movimentacaoRepository.save(movimentacao);
     }
@@ -58,10 +58,22 @@ public class MovimentacaoService {
         final Veiculo veiculo = this.veiculoRepository.findById(movimentacao.getVeiculo().getId()).orElse(null);
         Assert.notNull(veiculo, "Veiculo não localizado!");
 
+
+
+
+
+
+
+
+
+
+
+
+/*
         Duration duration = Duration.between(movimentacao.getEntrada(), movimentacao.getSaida());
         Long duracao;
         duracao = duration.toMinutes();
-
+*/
         return this.movimentacaoRepository.save(movimentacao);
 
     }
