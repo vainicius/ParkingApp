@@ -4,6 +4,7 @@ import br.com.uniamerica.estacionamento.entity.Condutor;
 import br.com.uniamerica.estacionamento.entity.Movimentacao;
 import br.com.uniamerica.estacionamento.entity.Veiculo;
 import br.com.uniamerica.estacionamento.repository.CondutorRepository;
+import br.com.uniamerica.estacionamento.repository.ConfiguracaoRepository;
 import br.com.uniamerica.estacionamento.repository.MovimentacaoRepository;
 import br.com.uniamerica.estacionamento.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class MovimentacaoService {
     private CondutorRepository condutorRepository;
     @Autowired
     private VeiculoRepository veiculoRepository;
+    @Autowired
+    private ConfiguracaoRepository configuracaoRepository;
 
 
     public Movimentacao cadastrar(Movimentacao movimentacao){
@@ -32,7 +35,7 @@ public class MovimentacaoService {
 
         final Condutor condutor = this.condutorRepository.findById(movimentacao.getCondutor().getId()).orElse(null);
         Assert.notNull(condutor, "Condutor não localizado!");
-        Assert.isTrue(!condutor.isAtivo(),"Condutor não está ativo!");
+        //Assert.isTrue(!condutor.isAtivo(),"Condutor não está ativo!");
         final Veiculo veiculo = this.veiculoRepository.findById(movimentacao.getVeiculo().getId()).orElse(null);
         Assert.notNull(veiculo, "Veiculo não localizado!");
 

@@ -60,7 +60,6 @@ public class MovimentacaoController {
                 throw new RuntimeException("Não foi possivel identificar a movimentacao informada!");
             }
 
-            this.movimentacaoRepository.save(movimentacao);
             return ResponseEntity.ok("Movimentacao atualizado com sucesso");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());

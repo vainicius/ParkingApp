@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Alterando tudo para @RestController pois estou desesperado">
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Fetch e CascadeTypes retiradas no Modelo. Resolvendo o erro &quot;disable SerializationFeature.FAIL_ON_EMPTY_BEANS&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/configuracao/ExceptionHandlerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/configuracao/ExceptionHandlerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Veiculo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/VeiculoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/VeiculoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/AbstractEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/AbstractEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Veiculo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Veiculo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/MovimentacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/controller/MovimentacaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Movimentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Movimentacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MovimentacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MovimentacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Modelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Modelo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Movimentacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Movimentacao.class" afterDir="false" />
     </list>
     <list id="bc9b78df-9835-401f-91fa-d541226f40d7" name="Changes by jeanf" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,30 +60,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/usuario/Documents/Desenvolvimento/estacionamento&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b292d0989bf8f542da200403cc97638d&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/usuario/Documents/Desenvolvimento/gestaoEstacionamento-hibernate-validation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "spring.configuration.checksum": "b292d0989bf8f542da200403cc97638d",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="EstacionamentoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="estacionamento" />
@@ -109,7 +108,8 @@
       <workItem from="1684448527385" duration="7352000" />
       <workItem from="1684686071176" duration="60000" />
       <workItem from="1684686775314" duration="26003000" />
-      <workItem from="1684792125992" duration="5919000" />
+      <workItem from="1684792125992" duration="9600000" />
+      <workItem from="1684815663988" duration="463000" />
     </task>
     <task id="LOCAL-00001" summary="Elements creation and initial DB configuration.">
       <created>1679955148571</created>
@@ -272,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684793751910</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fetch e CascadeTypes retiradas no Modelo. Resolvendo o erro &quot;disable SerializationFeature.FAIL_ON_EMPTY_BEANS&quot;">
+      <created>1684798715918</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1684798715919</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +342,8 @@
     <MESSAGE value="Modelo - CascadeType.ALL -&gt; CascadeType.MERGE" />
     <MESSAGE value="Alterações para resolver o erro &quot;The given id must not be null&quot; no Postman." />
     <MESSAGE value="Alterando tudo para @RestController pois estou desesperado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterando tudo para @RestController pois estou desesperado" />
+    <MESSAGE value="Fetch e CascadeTypes retiradas no Modelo. Resolvendo o erro &quot;disable SerializationFeature.FAIL_ON_EMPTY_BEANS&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fetch e CascadeTypes retiradas no Modelo. Resolvendo o erro &quot;disable SerializationFeature.FAIL_ON_EMPTY_BEANS&quot;" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ParkingApp$EstacionamentoApplication.ic" NAME="EstacionamentoApplication Coverage Results" MODIFIED="1684447622993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

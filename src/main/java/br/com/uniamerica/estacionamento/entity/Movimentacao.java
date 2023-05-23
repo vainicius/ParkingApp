@@ -13,42 +13,42 @@ import java.time.LocalTime;
 @Table(name="movimentacao_table", schema = "public")
 public class Movimentacao extends AbstractEntity {
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn()
+    @ManyToOne()
+    @JoinColumn(nullable = false)
     private Veiculo veiculo;
     @Getter @Setter
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name="",nullable = false)
+    @ManyToOne
+    @JoinColumn(nullable = false)
     private Condutor condutor;
     @Getter @Setter
     @Column(name="entradas",nullable = false)
     private LocalDateTime entrada;
     @Getter @Setter
-    @Column(name="saidas",nullable = false)
+    @Column(name="saidas")
     private LocalDateTime saida;
     @Getter @Setter
-    @Column(name="tempos",nullable = false)
+    @Column(name="tempos")
     private LocalTime tempo;
     @Getter @Setter
-    @Column(name="tempo_descontos",nullable = false)
+    @Column(name="tempo_descontos")
     private LocalTime tempoDesconto;
     @Getter @Setter
-    @Column(name="tempos_multas",nullable = false)
+    @Column(name="tempos_multas")
     private LocalTime tempoMulta;
     @Getter @Setter
-    @Column(name="valores_descontos",nullable = false)
+    @Column(name="valores_descontos")
     private BigDecimal valorDesconto;
     @Getter @Setter
-    @Column(name="valores_multas",nullable = false)
+    @Column(name="valores_multas")
     private BigDecimal valorMulta;
     @Getter @Setter
-    @Column(name="valores_totais",nullable = false)
+    @Column(name="valores_totais")
     private BigDecimal valorTotal;
     @Getter @Setter
-    @Column(name="valores_horas",nullable = false)
+    @Column(name="valores_horas")
     private BigDecimal valorHora;
     @Getter @Setter
-    @Column(name="valores_horas_multas",nullable = false)
+    @Column(name="valores_horas_multas")
     private BigDecimal valorHoraMulta;
 
 }
