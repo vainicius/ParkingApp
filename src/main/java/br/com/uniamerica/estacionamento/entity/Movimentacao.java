@@ -50,5 +50,14 @@ public class Movimentacao extends AbstractEntity {
     @Getter @Setter
     @Column(name="valores_horas_multas")
     private BigDecimal valorHoraMulta;
+    @Getter @Setter
+    @Column(name = "tempo_estacionado")
+    private long tempoEstacionadoMinutos;
+    @Getter @Setter
+    @Column(name = "tempo_multa")
+    private long tempoMultaMinutos;
 
+    @Getter @Setter
+    @Column(name = "tempo_desconto")
+    private long tempoDescontoMinutos;
 }

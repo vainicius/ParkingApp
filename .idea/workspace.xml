@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="Movimentacao - Removendo &quot;nullable = false&quot; para melhoria nos testes.">
+    <list default="true" id="e3e83138-c892-4786-a293-0e1c35d022e5" name="Changes" comment="ConfiguracaoRepository - findByConfiguracao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Configuracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Configuracao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Movimentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/entity/Movimentacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/repository/MovimentacaoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MovimentacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uniamerica/estacionamento/service/MovimentacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Movimentacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uniamerica/estacionamento/entity/Movimentacao.class" afterDir="false" />
     </list>
@@ -34,8 +36,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ce4d761a-a7ca-4689-9336-ef5b853a355f" />
+        <option name="url" value="https://github.com/vainicius/ParkingApp.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -108,7 +123,7 @@
       <workItem from="1684686071176" duration="60000" />
       <workItem from="1684686775314" duration="26003000" />
       <workItem from="1684792125992" duration="9600000" />
-      <workItem from="1684815663988" duration="6512000" />
+      <workItem from="1684815663988" duration="12734000" />
     </task>
     <task id="LOCAL-00001" summary="Elements creation and initial DB configuration.">
       <created>1679955148571</created>
@@ -285,7 +300,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684816438900</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Configuracao - Tratamentos @NotNull">
+      <created>1684823829013</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684823829013</updated>
+    </task>
+    <task id="LOCAL-00027" summary="ConfiguracaoRepository - findByConfiguracao">
+      <created>1684824061323</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684824061323</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,8 +354,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Elements creation and initial DB configuration." />
-    <MESSAGE value="Elements, DB and Controller Settings" />
     <MESSAGE value="Controllers complete." />
     <MESSAGE value="Repositories and Controllers fixed and tested." />
     <MESSAGE value="ModeloService - cadastrar e editar OK" />
@@ -350,7 +377,9 @@
     <MESSAGE value="Alterando tudo para @RestController pois estou desesperado" />
     <MESSAGE value="Fetch e CascadeTypes retiradas no Modelo. Resolvendo o erro &quot;disable SerializationFeature.FAIL_ON_EMPTY_BEANS&quot;" />
     <MESSAGE value="Movimentacao - Removendo &quot;nullable = false&quot; para melhoria nos testes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Movimentacao - Removendo &quot;nullable = false&quot; para melhoria nos testes." />
+    <MESSAGE value="Configuracao - Tratamentos @NotNull" />
+    <MESSAGE value="ConfiguracaoRepository - findByConfiguracao" />
+    <option name="LAST_COMMIT_MESSAGE" value="ConfiguracaoRepository - findByConfiguracao" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ParkingApp$EstacionamentoApplication.ic" NAME="EstacionamentoApplication Coverage Results" MODIFIED="1684447622993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

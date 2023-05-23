@@ -20,4 +20,5 @@ public interface MovimentacaoRepository extends JpaRepository<br.com.uniamerica.
     @Query("from Movimentacao where veiculo.id = :id")
     public List<Movimentacao> findByVeiculoId(@Param("id") final Long id);
 
+
 }

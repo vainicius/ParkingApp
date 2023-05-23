@@ -1,6 +1,7 @@
 package br.com.uniamerica.estacionamento.service;
 
 import br.com.uniamerica.estacionamento.entity.Condutor;
+import br.com.uniamerica.estacionamento.entity.Configuracao;
 import br.com.uniamerica.estacionamento.entity.Movimentacao;
 import br.com.uniamerica.estacionamento.entity.Veiculo;
 import br.com.uniamerica.estacionamento.repository.CondutorRepository;
@@ -13,7 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import java.math.BigDecimal;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Service
 public class MovimentacaoService {
@@ -58,22 +62,87 @@ public class MovimentacaoService {
         final Veiculo veiculo = this.veiculoRepository.findById(movimentacao.getVeiculo().getId()).orElse(null);
         Assert.notNull(veiculo, "Veiculo não localizado!");
 
-
-
-
-
-
-
-
-
-
-
-
 /*
         Duration duration = Duration.between(movimentacao.getEntrada(), movimentacao.getSaida());
         Long duracao;
         duracao = duration.toMinutes();
+
 */
+
+        final Configuracao configuracao = this.configuracaoRepository.findByConfiguracao();
+        LocalDateTime dataEntrada = movimentacao.getEntrada();
+        LocalDateTime dataSaida = movimentacao.getSaida();
+
+        Duration tempoEstacionado = Duration.between(dataEntrada, dataSaida);
+
+        long tempoEstacionadoTotal = tempoEstacionado.toMinutes();
+        movimentacao.setTempoEstacionadoMinutos(tempoEstacionadoTotal);
+
+        LocalDateTime entrada = movimentacao.getEntrada();
+        LocalDateTime saida = movimentacao.getSaida();
+
+        int ano = saida.getYear() - entrada.getYear(); //Subtraindo o ano de entrada e o ano de saida
+        int dias = saida.getDayOfYear() - entrada.getDayOfYear(); //Subtraindo o dia de entrada e o dia de saida
+
+        long tempoTotal = Duration.between(entrada, saida).toMinutes(); //Convertendo a duração entre as datas em minutos.
+
+        int TempoTotalMinutos = 0;
+        /***
+         * Caso a entrada seja antes do inicio do expediente, ou caso a saida seja após o final do expediente.
+
+         */
+        if (LocalTime.from(entrada).isBefore(configuracao.getInicioExpediente()) || LocalTime.from(saida).isAfter(configuracao.getFimExpediente())) {
+
+            if(LocalTime.from(entrada).isBefore(configuracao.getInicioExpediente())) {
+
+                TempoTotalMinutos += Duration.between(LocalTime.from(entrada), configuracao.getInicioExpediente()).toMinutes();
+            }
+
+
+            if(LocalTime.from(saida).isAfter(configuracao.getFimExpediente())) {
+
+                TempoTotalMinutos += Duration.between(LocalTime.from(saida), configuracao.getFimExpediente()).toMinutes();
+
+            }
+        }
+        /***
+         * Calculando os dias
+         */
+        if ( ano > 0 ) {
+            dias += 365*ano;
+        }
+        if (dias > 0){
+            int foraExpediente = (int) Duration.between(configuracao.getInicioExpediente(), configuracao.getFimExpediente()).toMinutes();
+            int duracaoTotal = (int) tempoTotal;
+
+
+            TempoTotalMinutos += duracaoTotal - (dias * foraExpediente);
+
+
+
+            if (LocalTime.from(saida).isAfter(configuracao.getInicioExpediente()) && LocalTime.from(saida).isBefore(configuracao.getFimExpediente()) ) {
+                int TempoSaida = (int) Duration.between(LocalTime.from(saida), configuracao.getInicioExpediente()).toMinutes();
+                TempoSaida *= -1;
+                TempoTotalMinutos -= TempoSaida;
+
+            }
+
+
+        }
+
+
+        movimentacao.setValorHoraMulta(BigDecimal.valueOf(TempoTotalMinutos/60));
+        movimentacao.setTempoMultaMinutos(TempoTotalMinutos%60);
+
+
+        final BigDecimal valorMulta = new BigDecimal(TempoTotalMinutos/60).multiply(configuracao.getValorMinutoMulta());
+
+
+        movimentacao.setValorMulta(valorMulta);
+
+
+
+
         return this.movimentacaoRepository.save(movimentacao);
 
     }
@@ -86,10 +155,5 @@ public class MovimentacaoService {
         movimentacao.setAtivo(false);
         return ResponseEntity.ok("Movimentação deletada.");
     }
-
-
-
-
-
 
 }
